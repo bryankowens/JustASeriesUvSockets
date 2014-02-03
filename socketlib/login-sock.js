@@ -96,12 +96,14 @@ exports.logout = function(){
 }
 
 exports.anonymous = function(socket){
-  var thesql = "select htmlblob from content where content->>'type' = 'login' limit 1;"
+  var thesql = "select htmlblob from content where content->>'type' = 'login' limit 1;";
+    console.log(thesql);
     simplequery(thesql, socket, function(result) {
       if (result.rows.length == 1) {
-	  socket.emit('startup', result.rows[0].htmlblob);
+      socket.emit('startup', result.rows[0].htmlblob);
+      console.log(result.rows[0].htmlblob);
 
-	}
+      }
 	else {
 	  console.log("STARTUP QUERY PRODUCED TOO MANY RESULTS");
 	}
