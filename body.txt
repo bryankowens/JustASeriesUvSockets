@@ -1,0 +1,54 @@
+BLAH BLAH BLAH
+
+
+startup:
+ping client, upon ping emit back cookie or anonymous status
+ping server, check the token against existing tokens: 
+--if anonymous load the anonymous profile feed
+---anonymous feed is: latest articles, trending threads, default nav bar items, pulled from anon account
+
+
+--loop through sockets, find token
+----if the IP address of the socket is different from the IP inside the token, erase cookie, end login
+
+
+login:
+
+token comprises: socket IP address, login timestamp, user displayname, profile OID, account magic crypto ID (the profile hash) wrapped in DES crypto using latest socket as the crypto key
+
+account types:
+anonymous
+provisional - no email confirmation
+
+
+ANON PAGE:
+when session check reveals "nologon"
+-query content table for anonymous material, sort it by promoted and then by date
+
+
+
+SECURITY PROCEDURES:
+block the AWS ip's
+block the rackspace ip's
+block the godaddy ip's
+
+Admin: 
+provisional blocking of IP's from various countries
+
+
+
+content:
+
+content[] - title, revision_blob[], status(published/unpublished/deleted), editor_oid, stamps[created/updated/edited/published/unpublished/deleted]
+
+tags[]
+
+metadata[]
+
+comments[] - subject, comment_blob, author_oid, stamps[created/updated/edited/published/unpublished/deleted]
+
+
+
+
+content pull: 
+select 

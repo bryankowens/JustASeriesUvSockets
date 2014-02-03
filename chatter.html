@@ -1,0 +1,98 @@
+<!doctype html>
+<html ng-app="chatter">
+<head>
+    <meta charset="utf-8">
+    <title>ToDo</title>
+    <script src="/public/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/stylesheets/boot3/strap3.css">
+    <script src="/public/js/angular/bootstrap.min.js"></script>
+    <script src="/public/js/lib/sha3.js"></script>
+    <script src="/public/js/lib/aes.js"></script>
+    <script src="/public/js/lib/tinymce.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/js/angular/angular.min.js"></script>
+    <script src="/public/js/angular/angular-sanitize.js"></script>
+    <script src="/public/js/angular/angular-cookies.js"></script>
+    <script>
+     tinymce.init({
+       plugins: "textcolor",
+       selector:'.formd',
+       toolbar: 'bold italic underline strikethrough textcolor styleselect fontselect fontsizeselect undo redo removeformat',
+       width : 600,
+       height: 300,
+       menubar : false,
+       statusbar : false
+     });
+     
+    </script>
+    <style>
+        .done-true {text-decoration: line-through;color: grey;}
+    </style>
+    <script src="/public/js/chatter.js"></script>
+</head>
+<body ng-controller="TbarCtrl">
+  <div class="container" style="min-width: 900px; max-width:900px;" >
+      <div class="navbar navbar-default yamm">
+	  <div class="navbar-header">
+	      <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">The Intellectual Barbarian</a>
+	  </div>
+	  <div id="navbar-collapse-grid" class="navbar-collapse collapse">
+	      <ul class="nav navbar-nav">
+		  <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Recent<b class="caret"></b></a>
+		      <div class="dropdown-menu" style="min-height:300px">
+		      <p>Banks' new book chronicles innovations from gritty fieldwork
+			  As part of a fellows program several years ago, social innovation pioneer Ken Banks found himself at Stanford University where he was surrounded by young students studying social entrepreneurship. When Banks asked them about the focus of their academic work, those students responded that they were trying to learn the skills they needed to go out and change the world for the better.
+		      </p>
+			<ul><li ng-repeat="day in [1,2,3,4,5,6,7]">Name of Day: {{ ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][day-1] }}</li></ul>
+			 <a class="btn btn-primary btn-large" ng-click="logoutForm()"><i class="icon-white icon-user"></i>Logout</a>
+		      </div>
+		  </li>
+		  <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Media<b class="caret"></b></a>
+		      <div class="dropdown-menu" style="min-height:300px">
+			  <p>Banks' new book chronicles innovations from gritty fieldwork
+			      As part of a fellows program several years ago, social innovation pioneer Ken Banks found himself at Stanford University where he was surrounded by young students studying social entrepreneurship. When Banks asked them about the focus of their academic work, those students responded that they were trying to learn the skills they needed to go out and change the world for the better.
+			  </p>
+			  <div ng-repeat="todo in [1,2,3,4,5,6]"><p>Item {{todo}}</p></div>
+		      </div>
+		  </li>
+		  <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Feeds<b class="caret"></b></a>
+		      <div class="dropdown-menu" style="min-height:300px;background-color:{{data.color}}"><div compile="profile.slogan"></div>
+			  <p>Booya {{timeNow}}</p>
+			  <p>Banks' new book chronicles innovations from gritty fieldwork   
+			      As part of a fellows program several years ago, social innovation pioneer Ken Banks found himself at Stanford University where he was surrounded by young students studying social entrepreneurship. When Banks asked them about the focus of their academic work, those students responded that they were trying to learn the skills they needed to go out and change the world for the better.
+			  </p>
+		      </div>
+		  </li>
+		  <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Store<b class="caret"></b></a>
+		      <div class="dropdown-menu" style="min-height:300px">
+		         
+		      </div>
+		  </li>
+		  <li class="dropdown yamm-fw"><a href="/" data-toggle="dropdown" class="dropdown-toggle">{{profile.displayname || 'Login'}}<img src="{{profile.icon || '/public/img/anon.jpg'}}" height="25" width="25"><b class="caret"></b></a>
+		      <div class="dropdown-menu" style="min-height:300px">
+			<div id="logindiv" class="panel panel-default">
+			<div compile="userMenu"></div>
+		      </div>
+		      </div>
+		  </li>
+	      </ul>
+	  </div>
+      </div>
+  </div>
+
+  <div class="container">
+  <div class="row">
+  <div class="span4">
+  <div>
+    <h2>Todo</h2>
+    <div compile="userStore"></div>
+    
+
+  </div>
+</div>
+</div>
+  </div>
+  </div>
+  
+</body>
+</html>

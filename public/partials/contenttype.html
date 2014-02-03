@@ -1,0 +1,111 @@
+<html ng-app>
+<head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="http://getbootstrap.com/dist/js/bootstrap.js"></script>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+</head>
+<body ng-controller="ContentCtrl">
+<script>
+    function ContentCtrl($scope) {
+        $scope.fieldlist = [];
+        $scope.loginoption = "New Field";
+        $scope.formcolor = "lightblue";
+
+        $scope.addField = function() {
+            console.log("I am clicked.");
+            $scope.fieldlist.push({text:$scope.fieldtype, done:false});
+            console.log($scope.fieldtype);
+        };
+
+        $scope.remaining = function() {
+            var count = 0;
+            angular.forEach($scope.todos, function(todo) {
+                count += todo.done ? 0 : 1;
+            });
+            return count;
+        };
+
+        $scope.archive = function() {
+            var oldTodos = $scope.todos;
+            $scope.todos = [];
+            angular.forEach(oldTodos, function(todo) {
+                if (!todo.done) $scope.todos.push(todo);
+            });
+        };
+    }
+</script>
+<div class="container">
+<div class="row">
+<form class="form form-signup" role="form" ng-submit="loginForm(this.form)">
+  <div class="panel-body span3" style="float: left;width:275px">
+      <div class="form-group">
+	  <div class="input-group">
+	      <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+	      <input type="text" class="form-control" placeholder="Type Name" ng-model="this.form.userName" style="background-color:{{formcolor ? formcolor : 'white'}}"/>
+	  </div>
+      </div>
+      <div class="form-group">
+	  <div class="input-group">
+	      <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+	      </span>
+	      <input type="text" class="form-control" placeholder="System Name" ng-model="this.form.userEmail" style="background-color:{{formcolor ? formcolor : 'white'}}"/>
+	  </div>
+      </div>
+  </div>
+  <div class="panel-body span3" style="float: left;width:275px">
+      <div class="form-group">
+	  <div class="input-group">
+	      <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+	      <input type="text" class="form-control" placeholder="System Name" ng-model="this.form.displayName" style="background-color:{{formcolor ? formcolor : 'white'}}"/>
+	  </div>
+      </div>
+      <div class="form-group">
+	  <div class="input-group">
+	      <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+	      </span>
+	      <input type="text" class="form-control" placeholder="Repeat Email Address" ng-model="this.form.repeatEmail" style="background-color:{{formcolor ? formcolor : 'white'}}"/>
+	  </div>
+      </div>
+  </div>
+
+    <div class="panel-body span3" style="float: left;width:350px">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                <input type="text" class="form-control" placeholder="Description" ng-model="this.form.displayName" style="background-color:{{formcolor ? formcolor : 'white'}}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+	      <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+	      </span>
+                <input type="text" class="form-control" placeholder="Repeat Email Address" ng-model="this.form.repeatEmail" style="background-color:{{formcolor ? formcolor : 'white'}}"/>
+            </div>
+        </div>
+    </div>
+
+</form>
+</div>
+<div class="row">
+    <div class="form-group">
+        <a>{{fieldlist.length}}</a>
+    </div>
+    <div class="form-group"><div class="input-group">
+        <a class="btn btn-primary btn-large" ng-click="addField()"><i class="icon-white icon-user"></i>New Field: </a>
+            <select ng-model="fieldtype">
+                <option value="text">Text</option>
+                <option value="date">Date</option>
+                <option value="user">User</option>
+                <option value="select">Select</option>
+            </select>
+
+
+        <a class="btn btn-primary btn-large" ng-click="loginchoice()"><i class="icon-white icon-user"></i>Add Field</a>
+    </div></div>
+</div>
+</div>
+</body>
+</html>

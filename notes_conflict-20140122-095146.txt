@@ -1,0 +1,41 @@
+startup:
+1) emit to client, asking for 
+ 
+ 
+login:
+will check with contenttype to find groups user has access too
+1) 
+
+will need a systemdata table to store system settings like:
+default blocks to be loaded into system by anonymous user, with other blocks defined by the other users
+
+
+
+{"funcname":"freshcopy","funcmenu":"adminMenu","displayname":"New Blob Post","linkname":"newblogpost","usergroup":"admin"}
+
+contenttypes:
+
+typemeta:category, groupaccess, 
+typestamps: [updated/created/retired],
+typename: systemname, fullname, description,
+typefields[fieldname/fieldtype/fielddata/cssblob]  -- select, multiselect, textfield, textarea, password, link, field data refers to length and filler options
+typesubmission: name of function, linkto or operation performed
+typeform: staticblob (form format),
+typeframe: staticblob for data formatting display
+
+
+create static form for create new content types:
+
+
+
+form for generating contenttypes:
+fullname, systemname, description
+button to add new field ->
+-->field type, fieldoptions, field name, css class
+static blob - static frame for content
+form blob - static form for content entry
+
+
+
+
+

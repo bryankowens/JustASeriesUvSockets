@@ -1,0 +1,64 @@
+startup:
+1) emit to client, asking for 
+ 
+ 
+login:
+will check with contenttype to find groups user has access too
+1) 
+
+will need a systemdata table to store system settings like:
+default blocks to be loaded into system by anonymous user, with other blocks defined by the other users
+
+
+
+{"funcname":"freshcopy","funcmenu":"adminMenu","displayname":"New Blob Post","linkname":"newblogpost","usergroup":"admin"}
+
+contenttypes:
+
+create static form for create new content types:
+
+
+typemeta:category, groupaccess, 
+typestamps: [updated/created/retired],
+typename: systemname, fullname, description,
+typefields[fieldname/fieldtype/fielddata/cssblob]  -- select, multiselect, textfield, textarea, password, link, field data refers to length and filler options
+typeform: staticblob (form format),
+
+
+
+var itexists = function(data,socket,login){
+    //token = Time logged in, Username, IP Address
+    for (client in socket.store.store.clients) {
+      console.log(login.username + " is logging in.  Comparing to session: " + client);
+      if (login.username == socket.store.store.clients[client].data.username) {login.sessionstatus = "duplicate"};
+    };
+    console.log(data.rows[0]);
+    login.profile = data.rows[0].profile;
+    var token = {"displayname":data.rows[0].profile.displayname,"guestip": socket.handshake.address.address,"timestamp": new Date().getTime(),"magicseed": data.rows[0].credentials.magiccrypto};
+    socket.store.store.clients[client].data.username = login.username;
+    socket.store.store.clients[client].data.cryptoken = login.cryptoken = CryptoJS.AES.encrypt(JSON.stringify(token), socket.id).toString();
+
+    //now pulling the datablocks used by the client;
+    var thesql = "select oid,funcmeta,codeblob from system where funcmeta->>'usergroup' = '" + data.rows[0].credentials.group + "';"
+    pgclient.query(thesql, function(err, result) {
+      if (err) {console.log("ERROR: " + err)};
+      //console.log(result);		   
+      login.blocks = result.rows;
+      socket.emit('login', login.sessionstatus == "authenticated" ? login : "Not Authenticated");
+    });  
+    
+}
+
+
+var isValidated = function(socket, data){
+  var thesql = "select oid,profile,credentials from users where credentials->>'username' = '" + data.username + "' and credentials->>'password' = '" + data.password + "' limit 1;"
+  simplequery(thesql, socket, function(err, result) {
+	if (result.rows.length == 1) {
+	  var login = {sessionstatus: "authenticated", message: "Logged in", username:data.username};
+          validate(result.rows[0],socket,login);
+	} else {
+	  var login = {sessionstatus: "invalid", message: "Incorrect credentials.", username:data.username};
+          socket.emit('login', login);
+	}
+  });
+}

@@ -1,0 +1,31 @@
+<div id="moncontainer">
+    <div id="userlist">USERS:</div>
+    <div id="monchat">
+        <h1>Monitoring Chat</h1>
+        <input id="userid" type="text" name="userid">
+        <input id="setname" type="button" value="SetName"/>
+        <select id="room">
+            <option value="main" selected="selected">main</option>
+            <option value="disturbia">disturbia</option>
+        </select>
+        <br>
+        <input id="message" type="text" name="message">
+        <input id="button" type="button" value="Send"/>
+        <hr>
+        <br>
+        <div id="chatbox"></div>
+    </div>
+</div>
+
+
+<div id="alerts">
+    <h1> Warnings and alerts</h1>
+</div>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+<link rel="stylesheet" type="text/css" href="/app.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://momentjs.com/downloads/moment.min.js"></script>
+<script src="/app.js"></script>

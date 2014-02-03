@@ -1,0 +1,16 @@
+<form ng-submit="addForm()">
+  <div class="login-form" style="width:600px">
+    <div ng-repeat="field in formD.fields">
+      <div ng-switch on="field.fieldinfo.type">
+	<div ng-switch-when="color"><input type="color" size="{{field.fieldinfo.size}}"></div>
+	<div ng-switch-when="date"><input type="date" size="{{field.fieldinfo.size}}"></div>
+	<div ng-switch-when="email"><input type="email" size="{{field.fieldinfo.size}}"></div>
+	<div ng-switch-when="password"><input type="password" size="{{field.fieldinfo.size}}"></div>
+	<div ng-switch-when="checkbox"><input type="checkbox" size="{{field.fieldinfo.size}}"></div>
+	<div ng-switch-when="text"><input type="text" size="{{field.fieldinfo.size}}"></div>
+	<div ng-switch-when="select"><select ng-model="color" ng-options="c.name for c in colors"></select><br></div>
+	<span ng-switch-default><b>Unkonwn Type</b></span>
+      </div>
+    </div>
+  </div>
+</form> 
