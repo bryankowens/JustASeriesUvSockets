@@ -2,7 +2,6 @@
 
 var socket = io.connect();
 
-
 var chatter = angular.module('chatter', ['ngCookies','ngSanitize'],function($compileProvider) {
   $compileProvider.directive('compile', function($compile) {
     
@@ -37,34 +36,42 @@ chatter.factory('general', function($sce) {
 
 function TbarCtrl($scope, $cookies, $http, $location, $compile, $sce, general) {
   
-    socket.emit('startup', {cryptoken: $cookies.token || 'NoLogon'});
+    socket.emit('startup', {cryptoken: $cookies.token || 'NoLogin'});
 
-    var markup = "socket.emit('startup', {cryptoken: $cookies.token || 'NoLogon'})";
     socket.on('startup', function(data){
       $scope.userStore = "<h1>TEST</h1>";
-      $scope.userMenu = data;
+      $cookies.token = data.cryptoken || "NoLogin";
+      $scope.profile = data.profile;
+      if (data.content.length == 0) {
+	$scope.userMenu = "<div> HEY! </div>"
+      } else {
+	$scope.userMenu = data.content[0].htmlblob;
+	$cookies.loginscreen = LZString.compress(data.content[0].htmlblob);
+      }
+      $scope.$apply();
 
     });
     socket.on('login', function(datum){
-      console.log("Show data now...");console.log(datum);
-      var divstring = "BEGIN: ";
+      console.log("Logging in:");
+      console.log(datum);
       $cookies.token = datum.cryptoken;
       $scope.profile = datum.profile;
       $scope.blocks = datum.blocks;
-//      for (var index = 0; index < datum.blocks.length; ++index) {
-//	 divstring = divstring + '<ol><a class="btn btn-primary btn-large" ng-click="render('+ index + ')"><i class="icon-white icon-user"></i>'+ datum.blocks[index].funcmeta.displayname + '</a></ol>';
- //     }
-      $scope.userMenu = divstring;
-      $scope.$apply();
-    });    
+      $scope.userStore = datum.forms[0].typeforms.form;
+      $scope.$apply();	
+    });
     
-    $scope.submit = function(content) {
-      console.log(content);
+    $scope.submit = function(content) {      
+      var submission = {}
+      submission.oid = content.id;
+      submission.content = content;
+      submission.author = $scope.profile;
+      socket.emit('submit', submission);
     }
     
     $scope.render = function(indexnumber) {
-      console.log("Index number is " + indexnumber);
-      console.log($scope.blocks[indexnumber].codeblob);
+      //console.log("Index number is " + indexnumber);
+      //console.log($scope.blocks[indexnumber].codeblob);
       var applied = setInterval( function()
 	{
 	if($scope.$$phase != '$digest' && $scope.$$phase != '$apply') {
@@ -74,31 +81,32 @@ function TbarCtrl($scope, $cookies, $http, $location, $compile, $sce, general) {
 	  };
 	}, 100 );
     }
-    
-    $scope.loginoption = "Login";
-    $scope.loginchoice = function() {
-      if ($scope.loginoption == "Login") {
-	$scope.loginoption = "Register";
-	$scope.newuserdiv = "hidden";
-	$scope.logintype = "register";
-      }
-      else {
-	$scope.loginoption = "Login";
-	$scope.newuserdiv = "none";
-	$scope.logintype = "login";
-      }
-    };
+
     $scope.loginForm = function(formdata) {
       var logindata = {username: formdata.userName, password: formdata.userPassword, display: formdata.displayName || "blank", repeatemail: formdata.repeatEmail || "blank", repeatpassword: formdata.repeatPassword || "blank"};
       socket.emit('login', logindata);
     }
+    
     $scope.logoutForm = function() {
-      console.log("Requesting logout");
       socket.emit('terminate', {cryptoken: $cookies.token});
     }
 
     socket.on('terminate', function(datum){
-       // eval(datum);
-	//delete $cookies.token;
+	eval(datum);
     });
+    
+    socket.on('update', function(datum){
+      console.log(datum);
+      for (var items in datum){
+	console.log(datum[items]);
+	$("#updates").prepend("<div>"+datum[items].content.body+"</div>").fadeIn(2000);
+	console.log(items.content);
+      }
+      
+    })
+    
+    setInterval(function(){
+      socket.emit('update', $scope.profile);
+    },60000);
+    
 };

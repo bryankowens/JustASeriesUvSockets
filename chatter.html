@@ -13,6 +13,7 @@
     <script src="/public/js/angular/angular.min.js"></script>
     <script src="/public/js/angular/angular-sanitize.js"></script>
     <script src="/public/js/angular/angular-cookies.js"></script>
+    <script src="/public/js/lz-string.js"></script>
     <script>
      tinymce.init({
        plugins: "textcolor",
@@ -82,7 +83,9 @@
 
   <div class="container">
   <div class="row">
-  <div class="span4">
+  
+  <div class="col-xs-2" id="updates" style="border:2px solid;border-color: red;height:400px">Hey filtch monkey</div>
+  <div class="col-xs-4">
   <div>
     <h2>Todo</h2>
     <div compile="userStore"></div>

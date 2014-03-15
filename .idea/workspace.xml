@@ -23,19 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="chatter.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/chatter.js">
+      <file leaf-file-name="submit-sock.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/socketlib/submit-sock.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="8" selection-start="48" selection-end="52" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="1650">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="35" selection-start="1142" selection-end="1149" vertical-scroll-proportion="-9.183674" vertical-offset="0" max-vertical-offset="1545">
+            <state line="26" column="1" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
               <folding />
             </state>
           </provider>
@@ -44,52 +35,25 @@
       <file leaf-file-name="chatter.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chatter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1545">
+            <state line="98" column="2" selection-start="5183" selection-end="5183" vertical-scroll-proportion="0.92436147" vertical-offset="529" max-vertical-offset="1590">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-sock.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/socketlib/login-sock.js">
+      <file leaf-file-name="chatter.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/chatter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="0" selection-start="4575" selection-end="4575" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1830">
+            <state line="107" column="0" selection-start="3395" selection-end="3395" vertical-scroll-proportion="0.0" vertical-offset="758" max-vertical-offset="1845">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pg-serv.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pg-serv.js">
+      <file leaf-file-name="jquery.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jquery.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="57" selection-start="773" selection-end="773" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notes.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notes.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="2708" selection-end="2708" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1050">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contenttype.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/partials/contenttype.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="75" selection-start="4474" selection-end="4474" vertical-scroll-proportion="0.0" vertical-offset="1094" max-vertical-offset="1740">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backups.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Code/azure-sdk-for-node/examples/backups.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="585">
+            <state line="13" column="5" selection-start="280" selection-end="280" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
@@ -105,26 +69,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/sockserv.js" />
         <option value="$PROJECT_DIR$/serv2.js" />
         <option value="$PROJECT_DIR$/chatserv.js" />
-        <option value="$PROJECT_DIR$/chatter.html" />
-        <option value="$PROJECT_DIR$/notes.txt" />
         <option value="getbootstrap.com/dist/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/public/partials/login2.html" />
         <option value="$PROJECT_DIR$/public/partials/contenttype.html" />
         <option value="$USER_HOME$/Code/azure-sdk-for-node/examples/backups.js" />
         <option value="$PROJECT_DIR$/pgchatserv.js" />
+        <option value="$PROJECT_DIR$/public/js/cookies.js" />
+        <option value="$PROJECT_DIR$/public/partials/login3.html" />
+        <option value="$PROJECT_DIR$/public/partials/new_oid.html" />
         <option value="$PROJECT_DIR$/socketlib/login-sock.js" />
+        <option value="$PROJECT_DIR$/pg-serv.js" />
+        <option value="$PROJECT_DIR$/socketlib/submit-sock.js" />
+        <option value="$PROJECT_DIR$/notes.txt" />
         <option value="$PROJECT_DIR$/public/js/chatter.js" />
+        <option value="$PROJECT_DIR$/chatter.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
-    <option name="y" value="-3" />
-    <option name="width" value="1604" />
-    <option name="height" value="1180" />
+    <option name="x" value="-5" />
+    <option name="width" value="1610" />
+    <option name="height" value="1205" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -134,10 +101,22 @@
             <id />
           </State>
           <State>
+            <id>Bash</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
             <id>Data flow issuesJavaScript</id>
           </State>
           <State>
             <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
+          </State>
+          <State>
+            <id>XSLT</id>
           </State>
         </expanded-state>
         <selected-state>
@@ -174,7 +153,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -239,21 +217,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chat-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chat-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="preferences.sourceCode.JavaScript" />
     <property name="last_opened_file_path" value="$USER_HOME$/Code/azure-sdk-for-node/examples/backups.js" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.contenttype.html">
+  <component name="RunManager" selected="JavaScript Debug.new_oid.html">
     <configuration default="false" name="chatter.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/chat-app/chatter.html">
       <RunnerSettings RunnerId="JavascriptDebugRunner" />
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
@@ -269,14 +263,14 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="name" value="Dart" />
-      <option name="saveOutputToFile" value="false" />
-      <option name="showConsoleOnStdErr" value="false" />
-      <option name="showConsoleOnStdOut" value="false" />
+    <configuration default="false" name="login3.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/chat-app/public/partials/login3.html">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="new_oid.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/chat-app/public/partials/new_oid.html">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -285,6 +279,16 @@
       <option name="filePath" />
       <option name="scope" value="ALL" />
       <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="name" value="Dart" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
@@ -298,16 +302,20 @@
       <browser start="false" url="" with-js-debugger="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.chatter.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.login2.html" />
       <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.contenttype.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.login3.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.new_oid.html" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.contenttype.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.login2.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.chatter.html" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.new_oid.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.login3.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.contenttype.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.login2.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.chatter.html" />
       </list>
     </recent_temporary>
   </component>
@@ -338,17 +346,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="-3" width="1604" height="1180" extended-state="6" />
+    <frame x="-5" y="0" width="1610" height="1205" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17125" sideWeight="0.6357616" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3642384" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16875" sideWeight="0.6707663" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36234626" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923368" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -377,70 +385,93 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/partials/login2.html">
+    <entry file="file://$PROJECT_DIR$/public/partials/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="32" selection-start="4495" selection-end="4495" vertical-scroll-proportion="0.7562941" vertical-offset="779" max-vertical-offset="1785" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="730" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/cookies.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="1" selection-start="822" selection-end="822" vertical-scroll-proportion="0.39320388" vertical-offset="0" max-vertical-offset="1030" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partials/new_oid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="45" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="180" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/partials/contenttype.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="75" selection-start="4474" selection-end="4474" vertical-scroll-proportion="0.0" vertical-offset="1094" max-vertical-offset="1740">
-          <folding />
-        </state>
+        <state line="41" column="48" selection-start="1398" selection-end="1398" vertical-scroll-proportion="0.0" vertical-offset="263" max-vertical-offset="1740" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Code/azure-sdk-for-node/examples/backups.js">
+    <entry file="file://$PROJECT_DIR$/public/partials/login3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+        <state line="0" column="63" selection-start="63" selection-end="63" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="750" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partials/login2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="11" selection-start="2199" selection-end="2262" vertical-scroll-proportion="-35.625" vertical-offset="0" max-vertical-offset="1785" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="998" column="0" selection-start="15758" selection-end="15758" vertical-scroll-proportion="0.33333334" vertical-offset="14729" max-vertical-offset="57045" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="35" selection-start="1142" selection-end="1149" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1545">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notes.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2708" selection-end="2708" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1050">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socketlib/submit-sock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="572" selection-end="572" vertical-scroll-proportion="0.18932039" vertical-offset="0" max-vertical-offset="1030">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pg-serv.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="57" selection-start="773" selection-end="773" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
+        <state line="36" column="42" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.5341246" vertical-offset="0" max-vertical-offset="1011">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/socketlib/login-sock.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="4575" selection-end="4575" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1830">
+        <state line="39" column="52" selection-start="1698" selection-end="2173" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="1620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pg-serv.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="40" selection-start="946" selection-end="946" vertical-scroll-proportion="0.48961425" vertical-offset="0" max-vertical-offset="1011">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socketlib/submit-sock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="1" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="5" selection-start="280" selection-end="280" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/chatter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="8" selection-start="48" selection-end="52" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="1650">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="35" selection-start="1142" selection-end="1149" vertical-scroll-proportion="-9.183674" vertical-offset="0" max-vertical-offset="1545">
+        <state line="107" column="0" selection-start="3395" selection-end="3395" vertical-scroll-proportion="0.0" vertical-offset="758" max-vertical-offset="1845">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chatter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1545">
+        <state line="98" column="2" selection-start="5183" selection-end="5183" vertical-scroll-proportion="0.92436147" vertical-offset="529" max-vertical-offset="1590">
           <folding />
         </state>
       </provider>

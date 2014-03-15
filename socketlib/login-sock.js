@@ -25,15 +25,19 @@ var validate = function(data, socket,login) {
     login.cryptoken = CryptoJS.AES.encrypt(data.credentials.magiccrypto, session_key).toString();
 
     var querarray = ['{"somedata":"Now with values!"}', socket.handshake.address.address, socket.id, session_key, data.oid, login.cryptoken, Date.now()];
-    console.log(querarray);
     pgclient.query("INSERT INTO sessions(session_data, session_ip, session_id, session_key, session_useroid, session_cryptoken, session_timestamp) values($1, $2, $3, $4, $5, $6, $7)", querarray, function(err){
         if (err) {console.log(err)}
     });
     login.profile = data.profile;
-    socket.emit('login', login);
+    login.profile.oid = data.oid;
+    var thequery = "select oid,typename,typeforms from contenttypes where typemeta->>'group' = 'admin';";
+      simplequery(thequery, socket, function(result) {
+	login.forms = result.rows;
+	socket.emit('login', login);
+      });
+  
 }
 
-//function getAccount({userID, user_iod, password})
 var getAccount = function(account,socket,callback) {
     var thesql = "select oid,profile,credentials from users where ";
     if (!account.username && !account.useroid) {console.log("Incomplete account data");return};
@@ -42,7 +46,22 @@ var getAccount = function(account,socket,callback) {
     }else {
         thesql = thesql + "credentials->>'username' = '" + account.username + "' and credentials->>'password' = '" + account.password + "' limit 1;"
     }
+    console.log('Yes you are logging in.');
     simplequery(thesql, socket, callback);
+}
+
+var getProfile = function(account, socket){
+    var thesql = "select htmlblob from content where content->>'group' = '" + account.group + "'";
+    simplequery(thesql, socket, function(result){
+      account.content = result.rows;
+//      console.log("Showing account: ");console.log(account);
+      socket.emit('startup', account);
+    });
+}
+
+var killSession = function(socket){
+      console.log("Killing session: " + socket.id);
+      socket.emit('terminate', "document.cookie = 'token' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT';console.log('You are logged out.')");  
 }
 
 exports.login = function(data,socket){
@@ -61,57 +80,26 @@ exports.login = function(data,socket){
 exports.sessioncheck = function(login, socket){
   var thesql = "select * from sessions where session_cryptoken = '" + login.cryptoken +"'";
   simplequery(thesql, socket, function(result) {
-    console.log(result.rows[0]);
     if (result.rows.length == 1) {
-      var account = {}; account.useroid = result.rows[0].session_useroid;
-//      var data = JSON.parse(CryptoJS.AES.decrypt(datum, socket.id).toString(CryptoJS.enc.Utf8));
+      var account = {}; account.useroid = result.rows[0].session_useroid;account.login = login;
       socket.store.store.clients[socket.id].data.cryptoken = result.rows[0].session_cryptoken;
-      console.log(account);
       getAccount(account, socket, function(result){
-        var login = {sessionstatus: "authenticated", message: "Logged in", username:result.rows[0].credentials.username, cryptoken: socket.store.store.clients[socket.id].data.cryptoken, profile:result.rows[0].profile};
-        socket.emit('login', login);
-      });
+        if (account.login.cryptoken === "NoLogin") {
+          account.sessionstatus = "anonymous", account.message = "Logged in", account.username = "Login", account.group = "anonymous";
+          getProfile(account,socket);
+        } else {
+          account.sessionstatus = "authenticated", account.message = "Logged in", account.username = result.rows[0].credentials.username, account.cryptoken = socket.store.store.clients[socket.id].data.cryptoken, account.profile = result.rows[0].profile, account.group = result.rows[0].credentials.group };
+          getProfile(account,socket);
+        });
     } else {
-      console.log("Or else what??");
-      socket.emit('terminate', "delete $cookies.token");
+      killSession(socket);
     }
   });
 }
 
 exports.endsession = function(datum, socket) {
-//  var thesql = "delete from sessions where session_useroid = 24584"
     var thesql = "delete from sessions where session_cryptoken = '" + datum.cryptoken +"'";  
-    console.log(thesql);
     simplequery(thesql, socket, function(result) {
-      console.log(result);
+      killSession(socket);
     })
-}
-
-//function getSession({cryptoken, ip address, socket id}
-//function getDisplay() - blocks, menu
-
-exports.logout = function(){
-  var data = JSON.parse(CryptoJS.AES.decrypt(datum, socket.id).toString(CryptoJS.enc.Utf8));
-  var thesql = "select profile from users where credentials->>'username' = '" + data.username + "' and credentials->>'password' = '" + data.password + "' limit 1;"
-}
-
-exports.anonymous = function(socket){
-  var thesql = "select htmlblob from content where content->>'type' = 'login' limit 1;";
-    console.log(thesql);
-    simplequery(thesql, socket, function(result) {
-      if (result.rows.length == 1) {
-      socket.emit('startup', result.rows[0].htmlblob);
-      console.log(result.rows[0].htmlblob);
-
-      }
-	else {
-	  console.log("STARTUP QUERY PRODUCED TOO MANY RESULTS");
-	}
-    });
-}
-
-exports.terminate = function(datum,socket){
-    //erase all session entries with that token, IP address
-    console.log("Terminating session?");
-    socket.emit('terminate', "delete $cookies.token");  
 }
